@@ -15,7 +15,9 @@
     transform: scale(1.15);
 }
 .name-config{
-    color: black;
     font-weight: bold;
     margin: 0;
+}
+.bi-pencil-fill{
+    color: black
 }

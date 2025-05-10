@@ -355,11 +355,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setSelectedCategory: (category) => {
 				setStore({ selectedCategory: category });
 			},
-			changeConfig: (newImg , newName, newPass)=>{
+			changeConfig: (newImg, newName, newPass) => {
 				const store = getStore()
-				setStore({defaultImgProfile: newImg})
+				setStore({ defaultImgProfile: newImg })
+			},
+			changeUserName: async (userId, firstName, lastName) => {
+				const myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+
+				const raw = JSON.stringify({
+					"first_name": firstName,
+					"last_name": lastName
+				});
+
+				const requestOptions = {
+					method: "PUT",
+					headers: myHeaders,
+					body: raw,
+					redirect: "follow"
+				};
+
+				try {
+					const response = await fetch(`${process.env.BACKEND_URL}user/${userId}`, requestOptions);
+					const result = await response.json();
+					console.log(result)
+				} catch (error) {
+					console.error(error);
+				};
 			}
-		}
+		},
 	};
 };
 

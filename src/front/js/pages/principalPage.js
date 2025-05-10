@@ -58,10 +58,11 @@ export const PrincipalPage = () => {
                     <div className="scrollmenu">
                         {path.pathname.startsWith("/cuentas/") ? (
                             store.detailAccounts.length > 0 ? (
-                                store.detailAccounts.map((details) => {
+                                store.detailAccounts.map((details, ind) => {
                                     const account = store.accounts.find(account => account.id === details.accounts_id);
                                     return (
                                         <CardMovimientos
+                                            key={ind}
                                             id={details.id}
                                             amount={details.amount}
                                             coin={details.coin}
@@ -83,10 +84,11 @@ export const PrincipalPage = () => {
                             )
                         ) : path.pathname === "/movimientos" ? (
                             store.detailUser.length > 0 ? (
-                                store.detailUser.map((movents) => {
+                                store.detailUser.map((movents, ind) => {
                                     const account = store.accounts.find(account => account.id === movents.accounts_id);
                                     return (
                                         <CardDetails
+                                            key={ind}
                                             id={movents.id}
                                             amount={movents.amount}
                                             coin={movents.coin}
@@ -112,8 +114,9 @@ export const PrincipalPage = () => {
                             )
                         ) : (
                             store.accounts.length > 0 ? (
-                                store.accounts.map((item) => (
+                                store.accounts.map((item, ind) => (
                                     <Card
+                                        key={ind}
                                         id={item.id}
                                         name={item.name}
                                         balance={item.balance}
