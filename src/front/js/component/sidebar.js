@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
+import { Config } from "../pages/config";
 import { Link } from "react-router-dom";
 import "/src/front/styles/sidebar.css";
 
@@ -37,11 +38,14 @@ export const Sidebar = () => {
                         <i className="icons-sidebar bi bi-graph-up"></i> <span className="icon-name">Movimientos</span>
                     </Link>
                 </li>
+                <li>
+                    <Config />
+                </li>
             </ul>
             {/* boton modo oscuro */}
             <div className="theme-toggle-container">
                 <button className="toggle-theme d-flex" onClick={actions.toggleTheme}>
-                {store.theme === "light" ?  <><p className="icon-theme">🌙</p><p className="dark-mode">Modo Oscuro </p></> :<> <p className="icon-theme">☀️ </p><p className="dark-mode">Modo Claro</p></>}
+                    {store.theme === "light" ? <><p className="icon-theme">🌙</p><p className="dark-mode">Modo Oscuro </p></> : <> <p className="icon-theme">☀️ </p><p className="dark-mode">Modo Claro</p></>}
                 </button>
             </div>
             {/* boton cerrar sesion */}

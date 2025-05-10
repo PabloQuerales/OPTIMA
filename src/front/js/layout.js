@@ -15,6 +15,7 @@ import { Login } from "./pages/login";
 import { PrincipalPage } from "./pages/principalPage"
 import { NotFound } from "./pages/notFound";
 import { RecoverPassword } from "./pages/recoverPassword";
+import { Config } from "./pages/config";
 
 //create your first component
 const Layout = () => {
@@ -30,12 +31,13 @@ const Layout = () => {
                 <Route element={<Login />} path="/" />
                 <Route element={<Demo />} path="/demo" />
                 <Route element={<PrincipalPage />} path="/cuentas" />
-                <Route element={<PrincipalPage />} path="/cuentas/:id" />                
+                <Route element={<PrincipalPage />} path="/cuentas/:id" />
                 <Route element={<PrincipalPage />} path="/movimientos" />
                 <Route element={<SignupForm />} path="/registro" />
                 <Route element={<RecoverPassword />} path="/recuperar-contrasena" />
                 <Route element={<Single />} path="/single/:theid" />
-                <Route element={<NotFound/>} path="*" />
+                <Route element={<NotFound />} path="*" />
+                <Route element={<Config />} path="/configuraciones" />
             </Routes>
         </BrowserRouter>
     );

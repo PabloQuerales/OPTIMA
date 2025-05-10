@@ -28,7 +28,6 @@
     margin-top: 10px;
 }
 
-
 .avatar {
     border-radius: 50%;
     background-color: #F5F5F5;
@@ -43,6 +42,7 @@
 
 .nav-links {
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .nav-links .nav-link {

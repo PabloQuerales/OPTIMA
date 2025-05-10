@@ -10,7 +10,6 @@ import { ModalDetails } from "../component/modalDetails";
 import { CardMovimientos } from "../component/cardMovimiento";
 import { CardDetails } from "../component/cardDetails";
 import { ModalEditAccount } from "../component/modalEditAccount";
-import { Filter } from "../component/filter";
 import { EmptyComponet } from "../component/emptyComponet";
 import { ModalEditDetail } from "../component/modalEditDetail";
 
@@ -133,7 +132,6 @@ export const PrincipalPage = () => {
                     </div>
                 </div>
                 {path.pathname === "/cuentas" ? <Modal /> : <ModalDetails />}
-                {/* {path.pathname === "/cuentas" ? null : <Filter />} */}
                 <ModalEditAccount cardId={cardId} show={showModal} onClose={() => setShowModal(false)} />
                 <ModalEditDetail cardId={cardId} accountId={accountId} show={showModalDetail} onClose={() => setShowModalDetail(false)} />
             </div>
