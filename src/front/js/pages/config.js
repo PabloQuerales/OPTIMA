@@ -34,7 +34,7 @@ export const Config = () => {
             <div className="nav-link " data-bs-toggle="modal" data-bs-target="#configuration">
                 <i className="icons-sidebar bi bi-gear-fill" ></i> <span className="icon-name">Configuraciones</span>
             </div>
-            <div className="modal fade" id="configuration" tabindex="-1" aria-labelledby="configuration" aria-hidden="true">
+            <div className="modal fade" id="configuration" tabIndex="-1" aria-labelledby="configuration" aria-hidden="true">
                 <div className="modal-dialog modal-xl ">
                     <div className="modal-content">
                         <div className="modal-header">

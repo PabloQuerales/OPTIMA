@@ -6,8 +6,6 @@ import "/src/front/styles/sidebar.css";
 
 export const Sidebar = () => {
     const { store, actions } = useContext(Context);
-    
-
     const handleClick = () => {
         actions.logout();
     };
