@@ -1,0 +1,15 @@
+.avatar-config{
+    border-radius: 50%;
+    background-color: #F5F5F5;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.name-config{
+    color: black;
+    font-weight: bold;
+}
