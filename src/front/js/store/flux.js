@@ -21,7 +21,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			detailAccounts: [],
 			detailUser: [],
 			selectedCategory: [],
-			movimientosFiltrados: []
+			movimientosFiltrados: [],
+			defaultImgProfile: "https://api.dicebear.com/9.x/initials/svg?seed="
 		},
 		actions: {
 			initializeTheme: () => { //se ejecuta cuando la app se cargue para caragar el tema correcto
@@ -354,6 +355,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setSelectedCategory: (category) => {
 				setStore({ selectedCategory: category });
 			},
+			changeConfig: (newImg , newName, newPass)=>{
+				const store = getStore()
+				setStore({defaultImgProfile: newImg})
+			}
 		}
 	};
 };

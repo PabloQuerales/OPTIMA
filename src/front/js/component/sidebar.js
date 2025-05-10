@@ -10,7 +10,6 @@ export const Sidebar = () => {
     const handleClick = () => {
         actions.logout();
     };
-
     return (
         <div className="sidebar">
             <div className="sidebar-header">
@@ -19,9 +18,7 @@ export const Sidebar = () => {
             </div>
             <div className="d-flex align-items-center user-info">
                 <img
-                    src={`https://api.dicebear.com/9.x/initials/svg?seed=${store.user.first_name}`}
-                    width="50"
-                    height="50"
+                    src={`${store.defaultImgProfile}${store.user.first_name}`}
                     className="avatar"
                 />
                 <p className="name p-2">{store.user.first_name} {store.user.last_name}</p>
