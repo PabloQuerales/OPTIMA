@@ -6,7 +6,7 @@ import "/src/front/styles/config.css";
 export const Config = () => {
     const { store, actions } = useContext(Context)
     
-    const [imgSelected, setImgSelected] = useState(`${store.defaultImgProfile}${store.user.first_name}`)
+    const [imgSelected, setImgSelected] = useState(`${store.defaultImgProfile}`)
     const profileIMG =[
         "https://api.dicebear.com/9.x/initials/svg?seed=",
         "https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=",
@@ -56,7 +56,7 @@ export const Config = () => {
                         </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" onClick={()=>actions.changeConfig(imgSelected)}>Guardar Cambios</button>
+                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={()=>actions.changeConfig(imgSelected)}>Guardar Cambios</button>
                             <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
