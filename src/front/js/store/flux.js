@@ -365,7 +365,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				try {
-					const response = await fetch(`${process.env.BACKEND_URL}user/${userId}`, requestOptions);
+					const response = await fetch(`${process.env.BACKEND_URL}/api/user/${userId}`, requestOptions);
 					const result = await response.json();
 					console.log(result)
 				} catch (error) {

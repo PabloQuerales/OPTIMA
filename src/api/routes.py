@@ -474,21 +474,13 @@ def filter_account_details(accounts_id):
 @api.route('/user/<int:user_id>', methods=['PUT'])
 def update_user_name(user_id):
     try:
-        request_body = request.get_json()
-        user = db.session.get(User, user_id)
-
-        if not user:
-            return jsonify({"msg": "User not found"}), 404
-
-        # Opcional: verifica qué campos llegaron y actualízalos si existen
-        if "first_name" in request_body:
-            user.first_name = request_body["first_name"]
-        if "last_name" in request_body:
-            user.last_name = request_body["last_name"]
-
+        body = request.json
+        user = db.session.execute(db.select(User).filter_by(id=user_id)).scalar_one()
+        print(user)
+        if "firts_name" in body or "last_name" in body:
+            user.first_name = body["first_name"]
+            user.last_name = body["last_name"]
         db.session.commit()
-
-        return jsonify(user.serialize()), 200
-
-    except Exception as e:
-        return jsonify({"msg": "Error updating user", "error": str(e)}), 500
+        return jsonify({"msg": "user updated"}), 200
+    except:
+        return jsonify({"msg": "internal server error"}), 500
