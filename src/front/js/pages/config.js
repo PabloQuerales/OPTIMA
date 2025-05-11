@@ -62,7 +62,7 @@ export const Config = () => {
                                         value={lastName}
                                         onChange={(e) => setLastName(e.target.value)}
                                     />
-                                    <i class="bi bi-check2-square btn btn-secondary" onClick={() => { setIsEditingName(false) }}></i>
+                                    <i className="bi bi-check2-square btn btn-secondary" onClick={() => { setIsEditingName(false) }}></i>
                                 </div>
                             ) : (
                                 <div className="d-flex btn btn-secondary gap-3" onClick={() => setIsEditingName(true)}>

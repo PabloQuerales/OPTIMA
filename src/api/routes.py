@@ -476,8 +476,7 @@ def update_user_name(user_id):
     try:
         body = request.json
         user = db.session.execute(db.select(User).filter_by(id=user_id)).scalar_one()
-        print(user)
-        if "firts_name" in body or "last_name" in body:
+        if "first_name" in body or "last_name" in body:
             user.first_name = body["first_name"]
             user.last_name = body["last_name"]
         db.session.commit()

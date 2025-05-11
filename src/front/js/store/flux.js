@@ -366,8 +366,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				try {
 					const response = await fetch(`${process.env.BACKEND_URL}/api/user/${userId}`, requestOptions);
-					const result = await response.json();
-					console.log(result)
+					if (response.status === 200) {
+						localStorage.removeItem("userLogged");
+					}
+					getActions().getUserLogged()
 				} catch (error) {
 					console.error(error);
 				};
